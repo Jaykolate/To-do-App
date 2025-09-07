@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List with Login & Signup</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="nav">
+    <h4>TO DO LIST</h4>
+    <div class="btn2">
+      <button class="login">Login</button>
+      <button class="sing">Sign up</button>
+    </div>
+  </div>
+
+  <!-- Login form -->
+  <div id="loginBox">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Enter username">
+    <input type="password" id="password" placeholder="Enter password">
+    <button onclick="login()">Login</button>
+    <button class="link-btn" onclick="showSignup()">Don't have an account? Sign Up</button>
+  </div>
+
+  <!-- Signup form -->
+  <div id="signupBox" class="authBox">
+    <h2>Sign Up</h2>
+    <input type="text" id="signupUser" placeholder="Choose username">
+    <input type="password" id="signupPass" placeholder="Choose password">
+    <button onclick="signup()">Sign Up</button>
+    <button class="link-btn" onclick="showLogin()">Already have an account? Login</button>
+  </div>
+
+  <!-- Todo List -->
+  <div class="container" id="todoApp">
+    <h2>My To-Do List</h2>
+    <input type="text" placeholder="Enter your tasks" class="inp">
+    <button type="submit" class="add">Add</button>
+    <div class="list">
+      <ul class="innerlist"></ul>
+    </div>
+    <button id="logoutBtn">Logout</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
