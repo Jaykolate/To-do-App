@@ -15,14 +15,24 @@ btn.addEventListener("click", function () {
   if (inp.value == "") return;
 
   let item = document.createElement("li");
-  item.innerText = inp.value;
   item.classList.add("one");
+
+  let checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.classList.add("check");
+
+  let span = document.createElement("span");
+  span.innerText = inp.value;
 
   let debtn = document.createElement("button");
   debtn.innerText = "Delete";
   debtn.classList.add("del");
 
+
+  item.appendChild(checkbox);
+   item.appendChild(span);
   item.appendChild(debtn);
+ 
   ul.appendChild(item);
   inp.value = "";
 });
@@ -35,6 +45,10 @@ ul.addEventListener("click", function (event) {
     alert("Item deleted successfully 🎉");
   }
 });
+
+loginBox.style.display = "flex";
+signupBox.style.display = "none";
+todoApp.style.display = "none";
 
 // Show login/signup
 loginBtn.addEventListener("click", function () {
@@ -82,3 +96,22 @@ logoutBtn.addEventListener("click", function () {
   todoApp.style.display = "none";
   loginBox.style.display = "flex";
 });
+
+// Attach login and signup functions to buttons
+document.getElementById("loginBtn").addEventListener("click", login);
+document.getElementById("signupBtn").addEventListener("click", signup);
+
+
+ul.addEventListener("change", function (event) {
+  if (event.target.classList.contains("check")) {
+    let taskText = event.target.nextSibling; // span
+    if (event.target.checked) {
+      taskText.style.textDecoration = "line-through";
+      taskText.style.color = "gray";
+    } else {
+      taskText.style.textDecoration = "none";
+      taskText.style.color = "black";
+    }
+  }
+});
+
