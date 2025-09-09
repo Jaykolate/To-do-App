@@ -23,7 +23,7 @@ project-folder/
 
 │── style.css # Styling (CSS).
 
-│── script.js # Functionality (JavaScript).
+│── app.js # Functionality (JavaScript).
 
 │── README.md # Project documentation.
 
